@@ -15,9 +15,13 @@
 		B93F1E262AF296DF00026DCF /* Connect.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B93F1E242AF296DF00026DCF /* Connect.xcdatamodeld */; };
 		B93F1E2F2AF297C700026DCF /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93F1E2E2AF297C700026DCF /* ViewModel.swift */; };
 		B93F1E312AF298A900026DCF /* ParsingStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93F1E302AF298A900026DCF /* ParsingStructure.swift */; };
-		B93F1E332AF2AB6500026DCF /* GetPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93F1E322AF2AB6500026DCF /* GetPost.swift */; };
+		B93F1E332AF2AB6500026DCF /* GetPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93F1E322AF2AB6500026DCF /* GetPostView.swift */; };
 		B93F1E352AF2BA2200026DCF /* StoringStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93F1E342AF2BA2200026DCF /* StoringStructure.swift */; };
-		B93F1E372AF2D1B400026DCF /* temp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93F1E362AF2D1B400026DCF /* temp.swift */; };
+		B93F1E3B2AF2F0C200026DCF /* AddPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93F1E3A2AF2F0C200026DCF /* AddPostView.swift */; };
+		B93F1E3D2AF2F0FC00026DCF /* GetAlumniView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93F1E3C2AF2F0FC00026DCF /* GetAlumniView.swift */; };
+		B93F1E432AF2F13B00026DCF /* AddAlumniView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93F1E422AF2F13A00026DCF /* AddAlumniView.swift */; };
+		B93F1E452AF2F14C00026DCF /* GetAlumniFundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93F1E442AF2F14C00026DCF /* GetAlumniFundView.swift */; };
+		B93F1E4B2AF2F1AC00026DCF /* AddDonationByAlumniView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93F1E4A2AF2F1AC00026DCF /* AddDonationByAlumniView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,9 +34,13 @@
 		B93F1E252AF296DF00026DCF /* Connect.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Connect.xcdatamodel; sourceTree = "<group>"; };
 		B93F1E2E2AF297C700026DCF /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		B93F1E302AF298A900026DCF /* ParsingStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParsingStructure.swift; sourceTree = "<group>"; };
-		B93F1E322AF2AB6500026DCF /* GetPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPost.swift; sourceTree = "<group>"; };
+		B93F1E322AF2AB6500026DCF /* GetPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPostView.swift; sourceTree = "<group>"; };
 		B93F1E342AF2BA2200026DCF /* StoringStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoringStructure.swift; sourceTree = "<group>"; };
-		B93F1E362AF2D1B400026DCF /* temp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = temp.swift; sourceTree = "<group>"; };
+		B93F1E3A2AF2F0C200026DCF /* AddPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostView.swift; sourceTree = "<group>"; };
+		B93F1E3C2AF2F0FC00026DCF /* GetAlumniView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAlumniView.swift; sourceTree = "<group>"; };
+		B93F1E422AF2F13A00026DCF /* AddAlumniView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAlumniView.swift; sourceTree = "<group>"; };
+		B93F1E442AF2F14C00026DCF /* GetAlumniFundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAlumniFundView.swift; sourceTree = "<group>"; };
+		B93F1E4A2AF2F1AC00026DCF /* AddDonationByAlumniView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDonationByAlumniView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,8 +106,12 @@
 			isa = PBXGroup;
 			children = (
 				B93F1E1B2AF296DD00026DCF /* ContentView.swift */,
-				B93F1E322AF2AB6500026DCF /* GetPost.swift */,
-				B93F1E362AF2D1B400026DCF /* temp.swift */,
+				B93F1E322AF2AB6500026DCF /* GetPostView.swift */,
+				B93F1E3A2AF2F0C200026DCF /* AddPostView.swift */,
+				B93F1E3C2AF2F0FC00026DCF /* GetAlumniView.swift */,
+				B93F1E422AF2F13A00026DCF /* AddAlumniView.swift */,
+				B93F1E442AF2F14C00026DCF /* GetAlumniFundView.swift */,
+				B93F1E4A2AF2F1AC00026DCF /* AddDonationByAlumniView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -174,13 +186,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B93F1E3D2AF2F0FC00026DCF /* GetAlumniView.swift in Sources */,
+				B93F1E432AF2F13B00026DCF /* AddAlumniView.swift in Sources */,
 				B93F1E352AF2BA2200026DCF /* StoringStructure.swift in Sources */,
-				B93F1E332AF2AB6500026DCF /* GetPost.swift in Sources */,
-				B93F1E372AF2D1B400026DCF /* temp.swift in Sources */,
+				B93F1E332AF2AB6500026DCF /* GetPostView.swift in Sources */,
 				B93F1E312AF298A900026DCF /* ParsingStructure.swift in Sources */,
+				B93F1E4B2AF2F1AC00026DCF /* AddDonationByAlumniView.swift in Sources */,
 				B93F1E2F2AF297C700026DCF /* ViewModel.swift in Sources */,
 				B93F1E232AF296DF00026DCF /* Persistence.swift in Sources */,
 				B93F1E1C2AF296DD00026DCF /* ContentView.swift in Sources */,
+				B93F1E452AF2F14C00026DCF /* GetAlumniFundView.swift in Sources */,
+				B93F1E3B2AF2F0C200026DCF /* AddPostView.swift in Sources */,
 				B93F1E262AF296DF00026DCF /* Connect.xcdatamodeld in Sources */,
 				B93F1E1A2AF296DD00026DCF /* ConnectApp.swift in Sources */,
 			);

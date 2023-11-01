@@ -7,9 +7,12 @@
 
 import Foundation
 
-struct getPost: Codable{
-//    let posts : [post]
+struct err: Codable{
     let error: String
+}
+
+struct getPost: Codable{
+    let posts : [post]
 }
 
 struct post: Codable{
@@ -23,7 +26,7 @@ struct AddPost: Codable{
     let error: String
 }
 
-struct getAlumni: Codable{
+struct GetAlumniDetails: Codable{
     let alumni: [alumni]
 }
 

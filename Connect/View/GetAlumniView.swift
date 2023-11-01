@@ -1,14 +1,14 @@
 //
-//  GetPost.swift
+//  GetAlumniView.swift
 //  Connect
 //
-//  Created by Rishabh Lalwani on 01/11/23.
+//  Created by Rishabh Lalwani on 02/11/23.
 //
 
 import SwiftUI
 
-struct GetPost: View {
-    @State private var posts: [PostStructure] = []
+struct GetAlumniView: View {
+    @State private var alumnies: [AlumniStructure] = []
     
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
@@ -18,7 +18,7 @@ struct GetPost: View {
     }
     
     func APICallToFetchAllPosts(){
-        let url = URL(string: "https://alumni-api.onrender.com/post/getPost")
+        let url = URL(string: "https://alumni-api.onrender.com/alumni/getAlumni")
         guard let requestUrl = url else { fatalError() }
         
         var request = URLRequest(url: requestUrl)
@@ -47,7 +47,7 @@ struct GetPost: View {
         
     }
     
-    func parseJSON(_ data: Data) -> [PostStructure]? {
+    func parseJSON(_ data: Data) -> [AlumniStructure]? {
                 let decoder = JSONDecoder()
                 do {
                     let decodedData = try decoder.decode(getPost.self, from: data)
@@ -55,18 +55,32 @@ struct GetPost: View {
                     
                     
                     
-                    return posts
+                    return alumnies
                     
                 } catch {
-                    print("cant parse authorization data")
+                    let erro = parseError(data)
                     return nil
                 }
-            }
+    }
     
-    
-    
+    func parseError(_ data: Data) -> String{
+        var erro: String = ""
+        let decoder = JSONDecoder()
+        do {
+            let decodedData = try decoder.decode(err.self, from: data)
+            print("data decoded")
+            
+            
+            
+            return erro
+            
+        } catch {
+            print("cant parse authorization data")
+            return ""
+        }
+    }
 }
 
 #Preview {
-    GetPost()
+    GetAlumniView()
 }
