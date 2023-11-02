@@ -30,6 +30,7 @@
 		B93F1E5A2AF3164D00026DCF /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93F1E592AF3164D00026DCF /* PostViewModel.swift */; };
 		B93F1E5C2AF37F6500026DCF /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93F1E5B2AF37F6500026DCF /* ProfileView.swift */; };
 		B93F1E5E2AF39B7800026DCF /* PaymentDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93F1E5D2AF39B7800026DCF /* PaymentDetailsView.swift */; };
+		B93F1E602AF3A8CE00026DCF /* LaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93F1E5F2AF3A8CE00026DCF /* LaunchScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		B93F1E592AF3164D00026DCF /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
 		B93F1E5B2AF37F6500026DCF /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		B93F1E5D2AF39B7800026DCF /* PaymentDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentDetailsView.swift; sourceTree = "<group>"; };
+		B93F1E5F2AF3A8CE00026DCF /* LaunchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 				B93F1E572AF3119F00026DCF /* TabsView.swift */,
 				B93F1E5B2AF37F6500026DCF /* ProfileView.swift */,
 				B93F1E5D2AF39B7800026DCF /* PaymentDetailsView.swift */,
+				B93F1E5F2AF3A8CE00026DCF /* LaunchScreen.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -214,6 +217,7 @@
 			files = (
 				B93F1E3D2AF2F0FC00026DCF /* GetAlumniView.swift in Sources */,
 				B93F1E432AF2F13B00026DCF /* AddAlumniView.swift in Sources */,
+				B93F1E602AF3A8CE00026DCF /* LaunchScreen.swift in Sources */,
 				B93F1E352AF2BA2200026DCF /* StoringStructure.swift in Sources */,
 				B93F1E332AF2AB6500026DCF /* GetPostView.swift in Sources */,
 				B93F1E312AF298A900026DCF /* ParsingStructure.swift in Sources */,

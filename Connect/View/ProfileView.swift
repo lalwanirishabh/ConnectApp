@@ -23,7 +23,7 @@ struct ProfileView: View {
                     .clipped()
                 }
                 
-                VStack {
+                VStack(alignment: .leading ){
                     Text("Kshitij Verma ")
                         .font(
                             Font.custom("Leelawadee UI", size: 22)
@@ -37,6 +37,7 @@ struct ProfileView: View {
                     
                 }
                 .padding(.leading, 40)
+                
             }
             
             Rectangle()
@@ -44,6 +45,7 @@ struct ProfileView: View {
                 .frame(width: 349, height: 448)
                 .background(Color(red: 0.85, green: 0.85, blue: 0.85).opacity(0.25))
                 .cornerRadius(15)
+                .padding(.top, 10)
             }
         
         
@@ -53,6 +55,7 @@ struct ProfileView: View {
             Text("Edit Profile")
                 .font(Font.custom("Leelawadee UI", size: 15))
                 .foregroundColor(Color(red: 0.64, green: 0.62, blue: 0.62))
+                .padding(.top, 10)
         })
         
         Button(action: {
@@ -82,6 +85,7 @@ struct ProfileView: View {
                     Spacer()
                 }
             }
+            .padding(.top, 10)
         })
         
         Button(action: {
@@ -90,6 +94,7 @@ struct ProfileView: View {
             Text("Log out")
             .font(Font.custom("Leelawadee UI", size: 15))
             .foregroundColor(Color(red: 0.64, green: 0.62, blue: 0.62))
+            .padding(.top, 10)
         })
     }
 }
