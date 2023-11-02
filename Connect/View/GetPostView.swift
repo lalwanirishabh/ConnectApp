@@ -8,12 +8,59 @@
 import SwiftUI
 
 struct GetPostView: View {
+    @State private var selectedTag: String? = nil
+    let tags = ["Highlights", "Everyone"]
     @State private var posts: [PostStructure] = []
     
     var body: some View {
-        Text("Hello world!")
+        NavigationView{
+            ZStack {
+                ScrollView{
+                    VStack{
+                        ForEach(posts){ post in
+                            PostView(post: post)
+                                .padding()
+                        }
+                    }
+                }
+                .navigationBarItems(leading:
+                    Image("Icon")
+                    .resizable()
+                    .frame(width: 39, height: 39)
+                )
+                .navigationBarItems(trailing: HStack {
+                                ForEach(tags, id: \.self) { tag in
+                                    ChipView(text: tag, isSelected: tag == selectedTag)
+                                        .onTapGesture {
+                                            selectedTag = tag
+                                        }
+                                }
+            })
+                
+                Button(action: {
+                    
+                }, label: {
+                    VStack {
+                        Spacer()
+                        HStack {
+                            Spacer()
+                            ZStack{
+                                Circle()
+                                    .frame(width: 50, height: 50)
+                                    .foregroundColor(Color(red: 0.91, green: 0.32, blue: 0.35))
+                                
+                                Image(systemName: "plus")
+                                    .foregroundColor(.white)
+                            }
+                            .padding(.trailing, 30)
+                        }
+                    }
+                })
+                
+            }
+        }
             .onAppear(perform: {
-                        APICallToFetchAllPosts()
+//                        APICallToFetchAllPosts()
                     })
     }
     

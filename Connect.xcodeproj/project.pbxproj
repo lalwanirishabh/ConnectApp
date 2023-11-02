@@ -31,6 +31,8 @@
 		B93F1E5C2AF37F6500026DCF /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93F1E5B2AF37F6500026DCF /* ProfileView.swift */; };
 		B93F1E5E2AF39B7800026DCF /* PaymentDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93F1E5D2AF39B7800026DCF /* PaymentDetailsView.swift */; };
 		B93F1E602AF3A8CE00026DCF /* LaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93F1E5F2AF3A8CE00026DCF /* LaunchScreen.swift */; };
+		B93F1E622AF4003C00026DCF /* FundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93F1E612AF4003C00026DCF /* FundView.swift */; };
+		B93F1E662AF4096C00026DCF /* SearchAlumniView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93F1E652AF4096C00026DCF /* SearchAlumniView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +62,8 @@
 		B93F1E5B2AF37F6500026DCF /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		B93F1E5D2AF39B7800026DCF /* PaymentDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentDetailsView.swift; sourceTree = "<group>"; };
 		B93F1E5F2AF3A8CE00026DCF /* LaunchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreen.swift; sourceTree = "<group>"; };
+		B93F1E612AF4003C00026DCF /* FundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundView.swift; sourceTree = "<group>"; };
+		B93F1E652AF4096C00026DCF /* SearchAlumniView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAlumniView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +145,8 @@
 				B93F1E5B2AF37F6500026DCF /* ProfileView.swift */,
 				B93F1E5D2AF39B7800026DCF /* PaymentDetailsView.swift */,
 				B93F1E5F2AF3A8CE00026DCF /* LaunchScreen.swift */,
+				B93F1E612AF4003C00026DCF /* FundView.swift */,
+				B93F1E652AF4096C00026DCF /* SearchAlumniView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -231,8 +237,10 @@
 				B93F1E5C2AF37F6500026DCF /* ProfileView.swift in Sources */,
 				B93F1E1C2AF296DD00026DCF /* ContentView.swift in Sources */,
 				B93F1E452AF2F14C00026DCF /* GetAlumniFundView.swift in Sources */,
+				B93F1E662AF4096C00026DCF /* SearchAlumniView.swift in Sources */,
 				B93F1E3B2AF2F0C200026DCF /* AddPostView.swift in Sources */,
 				B93F1E262AF296DF00026DCF /* Connect.xcdatamodeld in Sources */,
+				B93F1E622AF4003C00026DCF /* FundView.swift in Sources */,
 				B93F1E522AF30E6300026DCF /* PostView.swift in Sources */,
 				B93F1E1A2AF296DD00026DCF /* ConnectApp.swift in Sources */,
 				B93F1E5E2AF39B7800026DCF /* PaymentDetailsView.swift in Sources */,

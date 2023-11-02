@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct LogInView: View {
+    @State private var navigateToTabsView: Bool = false
     @State private var email: String = ""
     @State private var password: String = ""
     
@@ -47,7 +48,7 @@ struct LogInView: View {
                                 .autocapitalization(.none)
             
             Button(action: {
-
+                navigateToTabsView.toggle()
             }) {
                             Text("Log In")
                                 .foregroundColor(.white)
@@ -65,6 +66,9 @@ struct LogInView: View {
             
         }
         .background(.white)
+        .fullScreenCover(isPresented: $navigateToTabsView, content: {
+                    TabsView()
+                })
     }
 }
 

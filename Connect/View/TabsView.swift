@@ -10,21 +10,21 @@ import SwiftUI
 struct TabsView: View {
     var body: some View {
         TabView{
-            FeedView()
+            GetPostView()
                 .tabItem {
                     Image(systemName: "house.circle")
                 }
             Text("Search View")
                 .tabItem {
-                    Image(systemName: "house.circle")
+                    Image(systemName: "magnifyingglass")
                 }
             Text("Notification View")
                 .tabItem {
-                    Image(systemName: "house.circle")
+                    Image(systemName: "bell.fill")
                 }
-            Text("Profile View")
+            ProfileView(name: "Fahad Israr", batch: "2021")
                 .tabItem {
-                    Image(systemName: "house.circle")
+                    Image(systemName: "person.crop.circle.fill")
                 }
             
             

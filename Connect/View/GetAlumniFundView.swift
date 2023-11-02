@@ -8,11 +8,14 @@
 import SwiftUI
 
 struct GetAlumniFundView: View {
+    let name: String
     @State private var funds: [FundStructure] = []
     @State private var route: String = ""
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            
+            }
             .onAppear(perform: {
 //                        APICallToFetchAllPosts()
                     })
@@ -20,7 +23,7 @@ struct GetAlumniFundView: View {
     
     func APICallToFetchAllPosts(){
         var urlString: String = "https://alumni-api.onrender.com/alumniFund/getDonations"
-        urlString += route
+        urlString += "/\(name)"
         
         let url = URL(string: urlString)
         guard let requestUrl = url else { fatalError() }
@@ -98,5 +101,5 @@ struct GetAlumniFundView: View {
 }
 
 #Preview {
-    GetAlumniFundView()
+    GetAlumniFundView(name: "Fahad Israr")
 }

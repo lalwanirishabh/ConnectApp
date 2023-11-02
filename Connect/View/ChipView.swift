@@ -14,7 +14,7 @@ struct ChipView: View {
         var body: some View {
             Text(text)
                 .padding(8)
-                .background(isSelected ? Color.blue : Color.white)
+                .background(isSelected ? Color(red: 0.91, green: 0.32, blue: 0.35) : Color.white)
                 .foregroundColor(isSelected ? .white : .black)
                 .cornerRadius(16)
         }

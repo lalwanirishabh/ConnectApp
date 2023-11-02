@@ -14,7 +14,7 @@ struct LaunchScreen: View {
     var body: some View {
         
         if SplashScreenActive{
-            TabsView()
+            LogInView()
         }else{
             HStack(alignment: .center, spacing: 9) {
                 Image("Icon")
