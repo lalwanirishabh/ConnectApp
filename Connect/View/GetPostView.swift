@@ -8,7 +8,12 @@
 import SwiftUI
 
 struct GetPostView: View {
-    @State private var selectedTag: String? = nil
+    
+    let name : String
+    let groups: String
+    
+    @State private var selectedTag: String? = "Everyone"
+    @State private var route: String = ""
     let tags = ["Highlights", "Everyone"]
     @State private var posts: [PostStructure] = []
     
@@ -33,39 +38,46 @@ struct GetPostView: View {
                                     ChipView(text: tag, isSelected: tag == selectedTag)
                                         .onTapGesture {
                                             selectedTag = tag
+                                            if selectedTag! == "Everyone"{
+                                                route = ""
+                                            }else if selectedTag! == "Highlights"{
+                                                route = "ByGroup"
+                                            }
+                                            posts.removeAll()
+                                            APICallToFetchAllPosts()
                                         }
                                 }
             })
                 
-                Button(action: {
-                    
-                }, label: {
-                    VStack {
-                        Spacer()
-                        HStack {
+                NavigationLink(destination: AddPostView(name: name, groups: groups)) {
+                        VStack {
                             Spacer()
-                            ZStack{
-                                Circle()
-                                    .frame(width: 50, height: 50)
-                                    .foregroundColor(Color(red: 0.91, green: 0.32, blue: 0.35))
-                                
-                                Image(systemName: "plus")
-                                    .foregroundColor(.white)
+                            HStack {
+                                Spacer()
+                                ZStack{
+                                    Circle()
+                                        .frame(width: 50, height: 50)
+                                        .foregroundColor(Color(red: 0.91, green: 0.32, blue: 0.35))
+                                    
+                                    Image(systemName: "plus")
+                                        .foregroundColor(.white)
+                                }
+                                .padding(.trailing, 30)
                             }
-                            .padding(.trailing, 30)
                         }
                     }
-                })
+                }
                 
             }
-        }
             .onAppear(perform: {
-//                        APICallToFetchAllPosts()
+                        APICallToFetchAllPosts()
                     })
     }
     
     func APICallToFetchAllPosts(){
-        let url = URL(string: "http://192.168.1.8:3000/post/getPost")
+        var urlString = "http://192.168.1.8:3000/post/getPost"
+        urlString += route
+        let url = URL(string: urlString)
         guard let requestUrl = url else { fatalError() }
         var request = URLRequest(url: requestUrl)
         request.httpMethod = "GET"
@@ -138,5 +150,5 @@ struct GetPostView: View {
 }
 
 #Preview {
-    GetPostView()
+    GetPostView(name: "Fahad Israr", groups: "alumni")
 }

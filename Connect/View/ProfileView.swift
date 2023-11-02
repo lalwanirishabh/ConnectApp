@@ -10,6 +10,8 @@ import SwiftUI
 struct ProfileView: View {
     let name: String
     let batch: String
+    let groups: String
+    
     
     @State private var navigateToLogInView: Bool = false
     
@@ -63,7 +65,7 @@ struct ProfileView: View {
                         .padding(.top, 10)
                 })
                 
-                    NavigationLink(destination: PaymentDetailsView()){
+                    NavigationLink(destination: PaymentDetailsView(name: name)){
                         ZStack {
                             Rectangle()
                             .foregroundColor(.clear)
@@ -112,5 +114,5 @@ struct ProfileView: View {
 }
 
 #Preview {
-    ProfileView(name: "Fahad Israr", batch: "2021")
+    ProfileView(name: "Fahad Israr", batch: "2021", groups: "alumni")
 }

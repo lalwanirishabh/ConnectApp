@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct GetAlumniView: View {
+    var name: String
+    var groups: String
+    
     @State private var alumnies: [AlumniStructure] = []
     @State private var route: String = ""
     
@@ -171,5 +174,5 @@ struct GetAlumniView: View {
 }
 
 #Preview {
-    GetAlumniView()
+    GetAlumniView(name: "Fahaf Israr", groups: "alumni")
 }

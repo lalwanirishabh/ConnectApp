@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct NotificationView: View {
+    var name : String
+    var groups: String
+    
+    
     var body: some View {
         NavigationView{
             ScrollView{
@@ -22,5 +26,5 @@ struct NotificationView: View {
 }
 
 #Preview {
-    NotificationView()
+    NotificationView(name: "Fahad Israr", groups: "alumni")
 }

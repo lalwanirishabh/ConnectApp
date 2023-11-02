@@ -19,7 +19,7 @@ struct post: Codable{
     let name: String
     let title: String
     let content: String
-    let groups: String
+//    let groups: String
 }
 
 struct AddPost: Codable{
@@ -54,14 +54,14 @@ struct addAlumni: Codable{
 
 struct fund: Codable{
     let donation_id: Int
-    let amount: String
+    let amount: Int
     let date: String
     let description: String
     let alumni_name: String
 }
 
 struct getAlumniFunds: Codable{
-    let funds: [fund]
+    let alumni: [fund]
 }
 
 struct getAlumniFundsByName: Codable{
@@ -70,6 +70,11 @@ struct getAlumniFundsByName: Codable{
 
 struct mess: Codable{
     let message: String
+}
+
+struct authorisation: Codable{
+    let username: String
+    let groups: String
 }
 
 

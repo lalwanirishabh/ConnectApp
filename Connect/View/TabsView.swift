@@ -8,21 +8,24 @@
 import SwiftUI
 
 struct TabsView: View {
+    let name: String
+    let groups: String
+    
     var body: some View {
         TabView{
-            GetPostView()
+            GetPostView(name: name, groups: groups)
                 .tabItem {
                     Image(systemName: "house.circle")
                 }
-            Text("Search View")
+            GetAlumniView(name: name, groups: groups)
                 .tabItem {
                     Image(systemName: "magnifyingglass")
                 }
-            NotificationView()
+            NotificationView(name: name, groups: groups)
                 .tabItem {
                     Image(systemName: "bell.fill")
                 }
-            ProfileView(name: "Fahad Israr", batch: "2021")
+            ProfileView(name: name, batch: "2021", groups: groups)
                 .tabItem {
                     Image(systemName: "person.crop.circle.fill")
                 }
@@ -33,5 +36,5 @@ struct TabsView: View {
 }
 
 #Preview {
-    TabsView()
+    TabsView(name: "Fahad Israr", groups: "alumni")
 }

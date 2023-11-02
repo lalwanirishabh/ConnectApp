@@ -107,7 +107,7 @@ struct AddDonationByAlumniView: View {
                 print(responseJSON)
             }
         
-        let url = URL(string: "https://alumni-api.onrender.com/alumniFund/addDonation")
+        let url = URL(string: "http://192.168.1.8:3000/alumniFund/addDonation")
         guard let requestUrl = url else { fatalError() }
         
         var request = URLRequest(url: requestUrl)

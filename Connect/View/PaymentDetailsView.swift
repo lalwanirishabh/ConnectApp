@@ -16,6 +16,8 @@ struct PaymentDetailsView: View {
     @State private var Date: String = ""
     @State private var Description: String = ""
     
+    var name: String
+    
     
     let context = CIContext()
     let filter = CIFilter.qrCodeGenerator()
@@ -83,8 +85,8 @@ struct PaymentDetailsView: View {
                 }
             })
             
-            NavigationLink(destination: Text("Payment History")){
-                Text("Tranaction History")
+            NavigationLink(destination: TransactionHistoryView(name: name)){
+                Text("Transaction History")
             }
             
             Spacer()
@@ -108,5 +110,5 @@ struct PaymentDetailsView: View {
 }
 
 #Preview {
-    PaymentDetailsView()
+    PaymentDetailsView(name: "Fahad Israr")
 }

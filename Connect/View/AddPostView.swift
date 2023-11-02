@@ -11,6 +11,9 @@ struct AddPostView: View {
     @State private var title: String = ""
     @State private var description: String = ""
     
+    let name: String
+    let groups: String
+    
     var body: some View {
         NavigationView{
             VStack{
@@ -60,7 +63,7 @@ struct AddPostView: View {
                 })
                 
                 Button(action: {
-                    
+                    APICallToFetchAllPosts()
                 }, label: {
                     ZStack {
                         Rectangle()
@@ -82,9 +85,6 @@ struct AddPostView: View {
             }
             .navigationTitle("Add Post")
         }
-            .onAppear(perform: {
-//                        APICallToFetchAllPosts()
-                    })
     }
     
     func isValidJSON(_ data: Data) -> Bool {
@@ -97,7 +97,7 @@ struct AddPostView: View {
     }
     
     func APICallToFetchAllPosts(){
-        let json: [String: Any] = ["name":"Sunny", "title":"Technical", "content":"Atrang"]
+        let json: [String: Any] = ["name":"Fahad Israr", "title":"\(title)", "content":"\(description)", "groups":"alumni"]
         let jsonData = try? JSONSerialization.data(withJSONObject: json)
         print(isValidJSON(jsonData!))
         let responseJSON = try? JSONSerialization.jsonObject(with: jsonData!, options: [])
@@ -105,7 +105,7 @@ struct AddPostView: View {
                 print(responseJSON)
             }
         
-        let url = URL(string: "https://alumni-api.onrender.com/post/addPost")
+        let url = URL(string: "http://192.168.1.8:3000/post/addPost")
         guard let requestUrl = url else { fatalError() }
         
         var request = URLRequest(url: requestUrl)
@@ -177,5 +177,5 @@ struct AddPostView: View {
 }
 
 #Preview {
-    AddPostView()
+    AddPostView(name: "Fahad Israr", groups: "alumni")
 }
