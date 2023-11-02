@@ -50,8 +50,19 @@ struct GetAlumniView: View {
     func parseJSON(_ data: Data) -> [AlumniStructure]? {
                 let decoder = JSONDecoder()
                 do {
-                    let decodedData = try decoder.decode(getPost.self, from: data)
+                    let decodedData = try decoder.decode(GetAlumniDetails.self, from: data)
                     print("data decoded")
+                    for i in 0..<decodedData.alumni.count{
+                        let alumni_id = decodedData.alumni[i].alumni_id
+                        let name = decodedData.alumni[i].name
+                        let grad_year = decodedData.alumni[i].grad_year
+                        let contact_info = decodedData.alumni[i].contact_info
+                        let company = decodedData.alumni[i].company
+                        
+                        let newAlumni = AlumniStructure(id: String(alumni_id), name: name, grad_year: grad_year, contact_info: contact_info, company: company)
+                        
+                        alumnies.append(newAlumni)
+                    }
                     
                     
                     

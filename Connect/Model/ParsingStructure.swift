@@ -67,9 +67,8 @@ struct getAlumniFundsByName: Codable{
     let alumni: [fund]
 }
 
-struct addDonationByAlumni: Codable{
+struct mess: Codable{
     let message: String
-    let error: String
 }
 
 

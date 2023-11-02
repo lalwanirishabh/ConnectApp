@@ -11,7 +11,7 @@ struct GetPostView: View {
     @State private var posts: [PostStructure] = []
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("Hello world!")
             .onAppear(perform: {
                         APICallToFetchAllPosts()
                     })
@@ -52,7 +52,14 @@ struct GetPostView: View {
                 do {
                     let decodedData = try decoder.decode(getPost.self, from: data)
                     print("data decoded")
-                    
+                    for i in 0..<decodedData.posts.count{
+                        let name: String = decodedData.posts[i].name
+                        let title: String = decodedData.posts[i].title
+                        let content: String = decodedData.posts[i].content
+                        
+                        let newPost = PostStructure(id: "001", name: name, title: title, content: content)
+                        posts.append(newPost)
+                    }
                     
                     
                     return posts

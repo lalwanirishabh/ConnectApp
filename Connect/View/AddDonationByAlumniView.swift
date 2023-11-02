@@ -43,8 +43,8 @@ struct AddDonationByAlumniView: View {
             }
             
             if let safeData = data {
-//                if let mydata = self.parseJSON(safeData) {
-//                }
+                if self.parseJSON(safeData) != nil {
+                }
             }
             
             

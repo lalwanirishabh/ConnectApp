@@ -50,18 +50,49 @@ struct GetAlumniFundView: View {
     func parseJSON(_ data: Data) -> [FundStructure]? {
                 let decoder = JSONDecoder()
                 do {
-                    let decodedData = try decoder.decode(getPost.self, from: data)
+                    let decodedData = try decoder.decode(getAlumniFunds.self, from: data)
                     print("data decoded")
                     
+                    for i in 0..<decodedData.funds.count{
+                        let donation_id: String = String(decodedData.funds[i].donation_id)
+                        let amount: String = decodedData.funds[i].amount
+                        let date: String = decodedData.funds[i].date
+                        let description: String = decodedData.funds[i].description
+                        let alumni_name: String = decodedData.funds[i].alumni_name
+                        
+                        let newFund = FundStructure(id: donation_id, amount: amount, date: date, description: description, name: alumni_name)
+                        
+                        funds.append(newFund)
+                    }
+                    
+                    print(funds[1].amount)
                     
                     
                     return funds
                     
                 } catch {
-                    print("cant parse authorization data")
+                    let erro = parseError(data)
                     return nil
                 }
-            }
+    }
+    
+    func parseError(_ data: Data) -> String{
+        var erro: String = ""
+        let decoder = JSONDecoder()
+        do {
+            let decodedData = try decoder.decode(err.self, from: data)
+            print("data decoded")
+            
+            
+            
+            return erro
+            
+        } catch {
+            print("cant parse authorization data")
+            return ""
+        }
+    }
+    
 }
 
 #Preview {

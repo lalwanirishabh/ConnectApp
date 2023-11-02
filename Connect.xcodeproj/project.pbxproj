@@ -22,6 +22,12 @@
 		B93F1E432AF2F13B00026DCF /* AddAlumniView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93F1E422AF2F13A00026DCF /* AddAlumniView.swift */; };
 		B93F1E452AF2F14C00026DCF /* GetAlumniFundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93F1E442AF2F14C00026DCF /* GetAlumniFundView.swift */; };
 		B93F1E4B2AF2F1AC00026DCF /* AddDonationByAlumniView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93F1E4A2AF2F1AC00026DCF /* AddDonationByAlumniView.swift */; };
+		B93F1E502AF3091200026DCF /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93F1E4F2AF3091100026DCF /* LogInView.swift */; };
+		B93F1E522AF30E6300026DCF /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93F1E512AF30E6300026DCF /* PostView.swift */; };
+		B93F1E542AF30E7000026DCF /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93F1E532AF30E7000026DCF /* FeedView.swift */; };
+		B93F1E562AF30FB900026DCF /* ChipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93F1E552AF30FB900026DCF /* ChipView.swift */; };
+		B93F1E582AF3119F00026DCF /* TabsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93F1E572AF3119F00026DCF /* TabsView.swift */; };
+		B93F1E5A2AF3164D00026DCF /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93F1E592AF3164D00026DCF /* PostViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +47,13 @@
 		B93F1E422AF2F13A00026DCF /* AddAlumniView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAlumniView.swift; sourceTree = "<group>"; };
 		B93F1E442AF2F14C00026DCF /* GetAlumniFundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAlumniFundView.swift; sourceTree = "<group>"; };
 		B93F1E4A2AF2F1AC00026DCF /* AddDonationByAlumniView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDonationByAlumniView.swift; sourceTree = "<group>"; };
+		B93F1E4C2AF3042C00026DCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		B93F1E4F2AF3091100026DCF /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
+		B93F1E512AF30E6300026DCF /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
+		B93F1E532AF30E7000026DCF /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
+		B93F1E552AF30FB900026DCF /* ChipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipView.swift; sourceTree = "<group>"; };
+		B93F1E572AF3119F00026DCF /* TabsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsView.swift; sourceTree = "<group>"; };
+		B93F1E592AF3164D00026DCF /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +86,7 @@
 		B93F1E182AF296DD00026DCF /* Connect */ = {
 			isa = PBXGroup;
 			children = (
+				B93F1E4C2AF3042C00026DCF /* Info.plist */,
 				B93F1E2D2AF2971300026DCF /* View */,
 				B93F1E2C2AF2970600026DCF /* Model */,
 				B93F1E1D2AF296DF00026DCF /* Assets.xcassets */,
@@ -98,6 +112,7 @@
 				B93F1E2E2AF297C700026DCF /* ViewModel.swift */,
 				B93F1E302AF298A900026DCF /* ParsingStructure.swift */,
 				B93F1E342AF2BA2200026DCF /* StoringStructure.swift */,
+				B93F1E592AF3164D00026DCF /* PostViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -112,6 +127,11 @@
 				B93F1E422AF2F13A00026DCF /* AddAlumniView.swift */,
 				B93F1E442AF2F14C00026DCF /* GetAlumniFundView.swift */,
 				B93F1E4A2AF2F1AC00026DCF /* AddDonationByAlumniView.swift */,
+				B93F1E4F2AF3091100026DCF /* LogInView.swift */,
+				B93F1E532AF30E7000026DCF /* FeedView.swift */,
+				B93F1E512AF30E6300026DCF /* PostView.swift */,
+				B93F1E552AF30FB900026DCF /* ChipView.swift */,
+				B93F1E572AF3119F00026DCF /* TabsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -192,13 +212,19 @@
 				B93F1E332AF2AB6500026DCF /* GetPostView.swift in Sources */,
 				B93F1E312AF298A900026DCF /* ParsingStructure.swift in Sources */,
 				B93F1E4B2AF2F1AC00026DCF /* AddDonationByAlumniView.swift in Sources */,
+				B93F1E582AF3119F00026DCF /* TabsView.swift in Sources */,
+				B93F1E562AF30FB900026DCF /* ChipView.swift in Sources */,
 				B93F1E2F2AF297C700026DCF /* ViewModel.swift in Sources */,
 				B93F1E232AF296DF00026DCF /* Persistence.swift in Sources */,
+				B93F1E542AF30E7000026DCF /* FeedView.swift in Sources */,
+				B93F1E502AF3091200026DCF /* LogInView.swift in Sources */,
 				B93F1E1C2AF296DD00026DCF /* ContentView.swift in Sources */,
 				B93F1E452AF2F14C00026DCF /* GetAlumniFundView.swift in Sources */,
 				B93F1E3B2AF2F0C200026DCF /* AddPostView.swift in Sources */,
 				B93F1E262AF296DF00026DCF /* Connect.xcdatamodeld in Sources */,
+				B93F1E522AF30E6300026DCF /* PostView.swift in Sources */,
 				B93F1E1A2AF296DD00026DCF /* ConnectApp.swift in Sources */,
+				B93F1E5A2AF3164D00026DCF /* PostViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,9 +361,9 @@
 				DEVELOPMENT_TEAM = M46DPRX7BA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Connect/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -364,9 +390,9 @@
 				DEVELOPMENT_TEAM = M46DPRX7BA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Connect/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
