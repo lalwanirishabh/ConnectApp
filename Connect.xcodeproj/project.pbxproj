@@ -33,6 +33,10 @@
 		B93F1E602AF3A8CE00026DCF /* LaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93F1E5F2AF3A8CE00026DCF /* LaunchScreen.swift */; };
 		B93F1E622AF4003C00026DCF /* FundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93F1E612AF4003C00026DCF /* FundView.swift */; };
 		B93F1E662AF4096C00026DCF /* SearchAlumniView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93F1E652AF4096C00026DCF /* SearchAlumniView.swift */; };
+		B93F1E682AF4253A00026DCF /* TransactionHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93F1E672AF4253A00026DCF /* TransactionHistoryView.swift */; };
+		B93F1E6C2AF42C0600026DCF /* AlumniView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93F1E6B2AF42C0600026DCF /* AlumniView.swift */; };
+		B93F1E6E2AF433C900026DCF /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93F1E6D2AF433C900026DCF /* NotificationView.swift */; };
+		B93F1E702AF4340000026DCF /* NotificationScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93F1E6F2AF4340000026DCF /* NotificationScreenView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +68,10 @@
 		B93F1E5F2AF3A8CE00026DCF /* LaunchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreen.swift; sourceTree = "<group>"; };
 		B93F1E612AF4003C00026DCF /* FundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundView.swift; sourceTree = "<group>"; };
 		B93F1E652AF4096C00026DCF /* SearchAlumniView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAlumniView.swift; sourceTree = "<group>"; };
+		B93F1E672AF4253A00026DCF /* TransactionHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionHistoryView.swift; sourceTree = "<group>"; };
+		B93F1E6B2AF42C0600026DCF /* AlumniView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlumniView.swift; sourceTree = "<group>"; };
+		B93F1E6D2AF433C900026DCF /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		B93F1E6F2AF4340000026DCF /* NotificationScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationScreenView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +155,10 @@
 				B93F1E5F2AF3A8CE00026DCF /* LaunchScreen.swift */,
 				B93F1E612AF4003C00026DCF /* FundView.swift */,
 				B93F1E652AF4096C00026DCF /* SearchAlumniView.swift */,
+				B93F1E672AF4253A00026DCF /* TransactionHistoryView.swift */,
+				B93F1E6B2AF42C0600026DCF /* AlumniView.swift */,
+				B93F1E6D2AF433C900026DCF /* NotificationView.swift */,
+				B93F1E6F2AF4340000026DCF /* NotificationScreenView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -229,13 +241,17 @@
 				B93F1E312AF298A900026DCF /* ParsingStructure.swift in Sources */,
 				B93F1E4B2AF2F1AC00026DCF /* AddDonationByAlumniView.swift in Sources */,
 				B93F1E582AF3119F00026DCF /* TabsView.swift in Sources */,
+				B93F1E6E2AF433C900026DCF /* NotificationView.swift in Sources */,
 				B93F1E562AF30FB900026DCF /* ChipView.swift in Sources */,
 				B93F1E2F2AF297C700026DCF /* ViewModel.swift in Sources */,
 				B93F1E232AF296DF00026DCF /* Persistence.swift in Sources */,
 				B93F1E542AF30E7000026DCF /* FeedView.swift in Sources */,
+				B93F1E702AF4340000026DCF /* NotificationScreenView.swift in Sources */,
 				B93F1E502AF3091200026DCF /* LogInView.swift in Sources */,
+				B93F1E682AF4253A00026DCF /* TransactionHistoryView.swift in Sources */,
 				B93F1E5C2AF37F6500026DCF /* ProfileView.swift in Sources */,
 				B93F1E1C2AF296DD00026DCF /* ContentView.swift in Sources */,
+				B93F1E6C2AF42C0600026DCF /* AlumniView.swift in Sources */,
 				B93F1E452AF2F14C00026DCF /* GetAlumniFundView.swift in Sources */,
 				B93F1E662AF4096C00026DCF /* SearchAlumniView.swift in Sources */,
 				B93F1E3B2AF2F0C200026DCF /* AddPostView.swift in Sources */,

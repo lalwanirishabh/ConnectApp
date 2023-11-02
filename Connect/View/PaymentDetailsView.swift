@@ -83,6 +83,10 @@ struct PaymentDetailsView: View {
                 }
             })
             
+            NavigationLink(destination: Text("Payment History")){
+                Text("Tranaction History")
+            }
+            
             Spacer()
         }
     }

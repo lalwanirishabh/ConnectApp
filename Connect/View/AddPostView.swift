@@ -8,9 +8,80 @@
 import SwiftUI
 
 struct AddPostView: View {
+    @State private var title: String = ""
+    @State private var description: String = ""
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView{
+            VStack{
+                TextField("Title", text: $title)
+                                            .padding()
+                                            .background(Color(.secondarySystemBackground))
+                                            .cornerRadius(10)
+                                            .padding(.horizontal)
+                
+                TextField("Description", text: $description)
+                                            .padding()
+                                            .background(Color(.secondarySystemBackground))
+                                            .cornerRadius(10)
+                                            .padding(.horizontal)
+                
+                Button(action: {
+                    
+                }, label: {
+                    ZStack{
+                        Rectangle()
+                        .foregroundColor(.clear)
+                        .frame(width: 345, height: 63)
+                        .background(.white)
+
+                        .cornerRadius(15)
+                        .overlay(
+                        RoundedRectangle(cornerRadius: 15)
+                        .inset(by: 0.5)
+                        .stroke(Color(red: 0.91, green: 0.32, blue: 0.35), lineWidth: 1)
+
+                        )
+                        
+                        HStack{
+                            Text("Upload Image")
+                                .font(
+                                Font.custom("Leelawadee UI", size: 15)
+                                .weight(.bold)
+                                )
+                            .foregroundColor(Color(red: 0.92, green: 0.4, blue: 0.43))
+                            
+                            Image(systemName: "square.and.arrow.up.fill")
+                                .foregroundColor(Color(red: 0.92, green: 0.4, blue: 0.43))
+                        }
+                        
+                        
+                    }
+                })
+                
+                Button(action: {
+                    
+                }, label: {
+                    ZStack {
+                        Rectangle()
+                        .foregroundColor(.clear)
+                        .frame(width: 345, height: 63)
+                        .background(Color(red: 0.91, green: 0.32, blue: 0.35))
+                        .cornerRadius(15)
+                        
+                        Text("Post")
+                        .font(
+                        Font.custom("Leelawadee UI", size: 15)
+                        .weight(.bold)
+                        )
+                        .foregroundColor(.white)
+                    }
+                })
+                
+                
+            }
+            .navigationTitle("Add Post")
+        }
             .onAppear(perform: {
 //                        APICallToFetchAllPosts()
                     })

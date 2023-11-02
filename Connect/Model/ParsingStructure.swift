@@ -19,6 +19,7 @@ struct post: Codable{
     let name: String
     let title: String
     let content: String
+    let groups: String
 }
 
 struct AddPost: Codable{
@@ -33,7 +34,7 @@ struct GetAlumniDetails: Codable{
 struct alumni: Codable{
     let alumni_id: Int
     let name: String
-    let grad_year: String
+    let grad_year: Int
     let contact_info: String
     let company: String
 }

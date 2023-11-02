@@ -65,9 +65,8 @@ struct GetPostView: View {
     }
     
     func APICallToFetchAllPosts(){
-        let url = URL(string: "https://alumni-api.onrender.com/post/getPost")
+        let url = URL(string: "http://192.168.1.8:3000/post/getPost")
         guard let requestUrl = url else { fatalError() }
-        
         var request = URLRequest(url: requestUrl)
         request.httpMethod = "GET"
         

@@ -11,17 +11,90 @@ struct GetAlumniView: View {
     @State private var alumnies: [AlumniStructure] = []
     @State private var route: String = ""
     
+    @State private var searchedText: String = ""
+    @State private var selectedTag: String? = nil
+    let tags = ["Name", "Company" ,"Batch"]
+    
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            HStack{
+                Image(systemName: "arrowshape.turn.up.backward.circle.fill")
+                    .resizable()
+                    .frame(width: 30 , height: 30)
+                
+                ZStack(alignment: .trailing) {
+                    TextField("Search...", text: $searchedText)
+                        .onSubmit {
+                                alumnies.removeAll()
+                                APICallToFetchAllPosts()
+                        }
+                        .padding(12)
+                        .padding(.horizontal, 24)
+                        .background(Color(.systemGray6))
+                        .cornerRadius(20)
+                        .overlay(
+                            HStack {
+                                Image(systemName: "magnifyingglass")
+                                    .foregroundColor(.gray)
+                                    .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+                                    .padding(.leading, 8)
+                            }
+                        )
+                        .disableAutocorrection(true)
+                        .textInputAutocapitalization(.never)
+                    
+                    Button(action: {
+                        
+                    }, label: {
+                        Image(systemName: "delete.left.fill")
+                            .foregroundColor(.black)
+                    })
+                    .padding(.trailing)
+                }
+                .padding(.trailing)
+                
+            }
+            
+            HStack{
+                ForEach(tags, id: \.self) { tag in
+                    ChipView(text: tag, isSelected: tag == selectedTag)
+                        .onTapGesture {
+                            selectedTag = tag
+                            if selectedTag! == "Name"{
+                                route = "ByName/"
+                            }else if selectedTag! == "Company"{
+                                route = "/"
+                            }else if selectedTag! == "Batch"{
+                                route = "ByYear/"
+                            }
+                        }
+                        .padding(.horizontal, 20)
+                }
+            }
+            
+            ScrollView{
+                VStack{
+                    ForEach(alumnies){ alumni in
+                        AlumniView(alumni: alumni)
+                    }
+                }
+            }
+            
+            Spacer()
+            
+            
+        }
             .onAppear(perform: {
-//                        APICallToFetchAllPosts()
+                        APICallToFetchAllPosts()
                     })
     }
     
     func APICallToFetchAllPosts(){
-        var urlString: String = "https://alumni-api.onrender.com/alumni/getAlumni"
+        var urlString: String = "http://192.168.1.8:3000/alumni/getAlumni"
+        route.append(searchedText)
         urlString += route
+        print(urlString)
         let url = URL(string: urlString)
         
         guard let requestUrl = url else { fatalError() }
@@ -60,7 +133,7 @@ struct GetAlumniView: View {
                     for i in 0..<decodedData.alumni.count{
                         let alumni_id = decodedData.alumni[i].alumni_id
                         let name = decodedData.alumni[i].name
-                        let grad_year = decodedData.alumni[i].grad_year
+                        let grad_year = String(decodedData.alumni[i].grad_year)
                         let contact_info = decodedData.alumni[i].contact_info
                         let company = decodedData.alumni[i].company
                         

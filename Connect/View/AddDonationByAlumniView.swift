@@ -100,7 +100,7 @@ struct AddDonationByAlumniView: View {
     }
     
     func APICallToFetchAllPosts(){
-        let json: [String: Any] = ["donation_id":"\(paymentId)", "amount":"\(Amount)", "date":"\(Date)", "description":"\(Description)", "alumni_name":"\(name)"]
+        let json: [String: Any] = ["donation_id":"\(paymentId)", "amount":"\(Amount)", "date":"\(Date)", "description":" \(Description)", "alumni_name":"\(name)"]
         let jsonData = try? JSONSerialization.data(withJSONObject: json)
         let responseJSON = try? JSONSerialization.jsonObject(with: jsonData!, options: [])
             if let responseJSON = responseJSON as? [String: Any] {

@@ -18,7 +18,7 @@ struct TabsView: View {
                 .tabItem {
                     Image(systemName: "magnifyingglass")
                 }
-            Text("Notification View")
+            NotificationView()
                 .tabItem {
                     Image(systemName: "bell.fill")
                 }
