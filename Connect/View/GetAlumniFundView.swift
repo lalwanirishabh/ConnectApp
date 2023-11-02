@@ -65,8 +65,6 @@ struct GetAlumniFundView: View {
                         funds.append(newFund)
                     }
                     
-                    print(funds[1].amount)
-                    
                     
                     return funds
                     

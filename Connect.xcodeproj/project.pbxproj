@@ -28,6 +28,8 @@
 		B93F1E562AF30FB900026DCF /* ChipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93F1E552AF30FB900026DCF /* ChipView.swift */; };
 		B93F1E582AF3119F00026DCF /* TabsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93F1E572AF3119F00026DCF /* TabsView.swift */; };
 		B93F1E5A2AF3164D00026DCF /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93F1E592AF3164D00026DCF /* PostViewModel.swift */; };
+		B93F1E5C2AF37F6500026DCF /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93F1E5B2AF37F6500026DCF /* ProfileView.swift */; };
+		B93F1E5E2AF39B7800026DCF /* PaymentDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93F1E5D2AF39B7800026DCF /* PaymentDetailsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +56,8 @@
 		B93F1E552AF30FB900026DCF /* ChipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipView.swift; sourceTree = "<group>"; };
 		B93F1E572AF3119F00026DCF /* TabsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsView.swift; sourceTree = "<group>"; };
 		B93F1E592AF3164D00026DCF /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
+		B93F1E5B2AF37F6500026DCF /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		B93F1E5D2AF39B7800026DCF /* PaymentDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentDetailsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +136,8 @@
 				B93F1E512AF30E6300026DCF /* PostView.swift */,
 				B93F1E552AF30FB900026DCF /* ChipView.swift */,
 				B93F1E572AF3119F00026DCF /* TabsView.swift */,
+				B93F1E5B2AF37F6500026DCF /* ProfileView.swift */,
+				B93F1E5D2AF39B7800026DCF /* PaymentDetailsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -218,12 +224,14 @@
 				B93F1E232AF296DF00026DCF /* Persistence.swift in Sources */,
 				B93F1E542AF30E7000026DCF /* FeedView.swift in Sources */,
 				B93F1E502AF3091200026DCF /* LogInView.swift in Sources */,
+				B93F1E5C2AF37F6500026DCF /* ProfileView.swift in Sources */,
 				B93F1E1C2AF296DD00026DCF /* ContentView.swift in Sources */,
 				B93F1E452AF2F14C00026DCF /* GetAlumniFundView.swift in Sources */,
 				B93F1E3B2AF2F0C200026DCF /* AddPostView.swift in Sources */,
 				B93F1E262AF296DF00026DCF /* Connect.xcdatamodeld in Sources */,
 				B93F1E522AF30E6300026DCF /* PostView.swift in Sources */,
 				B93F1E1A2AF296DD00026DCF /* ConnectApp.swift in Sources */,
+				B93F1E5E2AF39B7800026DCF /* PaymentDetailsView.swift in Sources */,
 				B93F1E5A2AF3164D00026DCF /* PostViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
