@@ -12,7 +12,7 @@ struct AddPostView: View {
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
             .onAppear(perform: {
-                        APICallToFetchAllPosts()
+//                        APICallToFetchAllPosts()
                     })
     }
     
@@ -75,7 +75,9 @@ struct AddPostView: View {
                 do {
                     let decodedData = try decoder.decode(mess.self, from: data)
                     print("data decoded")
-                    return ""
+                    let mess = decodedData.message
+                    print(mess)
+                    return mess
                     
                 } catch {
                     let erro = parseError(data)
@@ -88,7 +90,8 @@ struct AddPostView: View {
         let decoder = JSONDecoder()
         do {
             let decodedData = try decoder.decode(err.self, from: data)
-            print("data decoded")
+            let err = decodedData.error
+            print(err)
             
             
             

@@ -9,16 +9,21 @@ import SwiftUI
 
 struct GetAlumniView: View {
     @State private var alumnies: [AlumniStructure] = []
+    @State private var route: String = ""
+    
     
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
             .onAppear(perform: {
-                        APICallToFetchAllPosts()
+//                        APICallToFetchAllPosts()
                     })
     }
     
     func APICallToFetchAllPosts(){
-        let url = URL(string: "https://alumni-api.onrender.com/alumni/getAlumni")
+        var urlString: String = "https://alumni-api.onrender.com/alumni/getAlumni"
+        urlString += route
+        let url = URL(string: urlString)
+        
         guard let requestUrl = url else { fatalError() }
         
         var request = URLRequest(url: requestUrl)

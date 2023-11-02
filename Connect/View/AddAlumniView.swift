@@ -11,19 +11,25 @@ struct AddAlumniView: View {
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
             .onAppear(perform: {
-                        APICallToFetchAllPosts()
+//                        APICallToFetchAllPosts()
                     })
     }
     
     func APICallToFetchAllPosts(){
         let json: [String: Any] = ["alumni_id":"004", "name":"Krishna Laddha", "grad_year":"2023", "contact_info":"linkedin_link", "company":"Celebal"]
         let jsonData = try? JSONSerialization.data(withJSONObject: json)
+        let responseJSON = try? JSONSerialization.jsonObject(with: jsonData!, options: [])
+            if let responseJSON = responseJSON as? [String: Any] {
+                print(responseJSON)
+            }
         
         let url = URL(string: "https://alumni-api.onrender.com/alumni/addAlumni")
         guard let requestUrl = url else { fatalError() }
         
         var request = URLRequest(url: requestUrl)
         request.httpMethod = "POST"
+        request.httpBody = jsonData
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
                 
@@ -56,12 +62,11 @@ struct AddAlumniView: View {
     func parseJSON(_ data: Data) -> String {
                 let decoder = JSONDecoder()
                 do {
-                    let decodedData = try decoder.decode(getPost.self, from: data)
+                    let decodedData = try decoder.decode(mess.self, from: data)
                     print("data decoded")
-                    
-                    
-                    
-                    return ""
+                    let mess = decodedData.message
+                    print(mess)
+                    return mess
                     
                 } catch {
                     let erro = parseError(data)
@@ -74,7 +79,8 @@ struct AddAlumniView: View {
         let decoder = JSONDecoder()
         do {
             let decodedData = try decoder.decode(err.self, from: data)
-            print("data decoded")
+            let err = decodedData.error
+            print(err)
             
             
             
