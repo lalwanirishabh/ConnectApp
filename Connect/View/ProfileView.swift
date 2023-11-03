@@ -15,6 +15,7 @@ struct ProfileView: View {
     @State private var navigateToLogInView: Bool = false
     
     
+    
     var body: some View {
         NavigationView {
             VStack{
@@ -47,11 +48,12 @@ struct ProfileView: View {
                     .padding(.leading, 40)
                     
                 }
+                .padding(.top, 20)
                 
                 ZStack {
                     Rectangle()
                         .foregroundColor(.clear)
-                        .frame(width: 349, height: 448)
+//                        .frame(width: 349, height: 448)
                         .background(Color(red: 0.85, green: 0.85, blue: 0.85).opacity(0.25))
                         .cornerRadius(15)
                         .padding(.top, 10)
@@ -68,14 +70,13 @@ struct ProfileView: View {
                     }
                 }
                 
-                Button(action: {
-                    
-                }, label: {
+                NavigationLink(destination: Text("Edit Profile View")) {
                     Text("Edit Profile")
                         .font(Font.custom("Leelawadee UI", size: 15))
                         .foregroundColor(Color(red: 0.64, green: 0.62, blue: 0.62))
                         .padding(.top, 10)
-                })
+                                                }
+                
                 
                     NavigationLink(destination: PaymentDetailsView(name: name)){
                         ZStack {
@@ -112,6 +113,7 @@ struct ProfileView: View {
                     .font(Font.custom("Leelawadee UI", size: 15))
                     .foregroundColor(Color(red: 0.64, green: 0.62, blue: 0.62))
                     .padding(.top, 10)
+                    .padding(.bottom, 30)
                 })
                 
             }

@@ -12,6 +12,7 @@ struct PostView: View {
     @State private var didLike: Bool = false
     @State private var didBookmark: Bool = false
     
+    
     var body: some View {
         VStack(alignment: .leading){
             HStack(alignment: .top, spacing: 12){
@@ -79,6 +80,7 @@ struct PostView: View {
                 }
             }
         }
+        
     }
 }
 

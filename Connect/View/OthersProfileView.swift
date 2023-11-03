@@ -46,11 +46,11 @@ struct OthersProfileView: View {
                     .padding(.leading, 40)
                     
                 }
+                .padding(.top, 20)
                 
                 ZStack {
                     Rectangle()
                         .foregroundColor(.clear)
-                        .frame(width: 349, height: 448)
                         .background(Color(red: 0.85, green: 0.85, blue: 0.85).opacity(0.25))
                         .cornerRadius(15)
                         .padding(.top, 10)

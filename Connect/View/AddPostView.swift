@@ -10,6 +10,7 @@ import SwiftUI
 struct AddPostView: View {
     @State private var title: String = ""
     @State private var description: String = ""
+    @State private var showAlert: Bool = false
     
     let name: String
     let groups: String
@@ -85,6 +86,13 @@ struct AddPostView: View {
             }
             .navigationTitle("Add Post")
         }
+        .alert(isPresented: $showAlert) {
+                        Alert(
+                            title: Text("Success"),
+                            message: Text("Post Created sucessfully"),
+                            dismissButton: .default(Text("OK"))
+                                )
+                }
     }
     
     func isValidJSON(_ data: Data) -> Bool {
@@ -148,6 +156,9 @@ struct AddPostView: View {
                     print("data decoded")
                     let mess = decodedData.message
                     print(mess)
+                    if mess == "Post added successfully"{
+                        showAlert.toggle()
+                    }
                     return mess
                     
                 } catch {
