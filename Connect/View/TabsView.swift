@@ -25,7 +25,7 @@ struct TabsView: View {
                 .tabItem {
                     Image(systemName: "bell.fill")
                 }
-            ProfileView(name: name, batch: "2021", groups: groups)
+            ProfileView(name: name, groups: groups)
                 .tabItem {
                     Image(systemName: "person.crop.circle.fill")
                 }

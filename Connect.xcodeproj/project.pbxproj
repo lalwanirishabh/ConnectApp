@@ -19,7 +19,6 @@
 		B93F1E352AF2BA2200026DCF /* StoringStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93F1E342AF2BA2200026DCF /* StoringStructure.swift */; };
 		B93F1E3B2AF2F0C200026DCF /* AddPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93F1E3A2AF2F0C200026DCF /* AddPostView.swift */; };
 		B93F1E3D2AF2F0FC00026DCF /* GetAlumniView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93F1E3C2AF2F0FC00026DCF /* GetAlumniView.swift */; };
-		B93F1E432AF2F13B00026DCF /* AddAlumniView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93F1E422AF2F13A00026DCF /* AddAlumniView.swift */; };
 		B93F1E452AF2F14C00026DCF /* GetAlumniFundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93F1E442AF2F14C00026DCF /* GetAlumniFundView.swift */; };
 		B93F1E4B2AF2F1AC00026DCF /* AddDonationByAlumniView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93F1E4A2AF2F1AC00026DCF /* AddDonationByAlumniView.swift */; };
 		B93F1E502AF3091200026DCF /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93F1E4F2AF3091100026DCF /* LogInView.swift */; };
@@ -37,6 +36,7 @@
 		B93F1E6C2AF42C0600026DCF /* AlumniView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93F1E6B2AF42C0600026DCF /* AlumniView.swift */; };
 		B93F1E6E2AF433C900026DCF /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93F1E6D2AF433C900026DCF /* NotificationView.swift */; };
 		B93F1E702AF4340000026DCF /* NotificationScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93F1E6F2AF4340000026DCF /* NotificationScreenView.swift */; };
+		B93F1E722AF478BD00026DCF /* OthersProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93F1E712AF478BD00026DCF /* OthersProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,7 +53,6 @@
 		B93F1E342AF2BA2200026DCF /* StoringStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoringStructure.swift; sourceTree = "<group>"; };
 		B93F1E3A2AF2F0C200026DCF /* AddPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostView.swift; sourceTree = "<group>"; };
 		B93F1E3C2AF2F0FC00026DCF /* GetAlumniView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAlumniView.swift; sourceTree = "<group>"; };
-		B93F1E422AF2F13A00026DCF /* AddAlumniView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAlumniView.swift; sourceTree = "<group>"; };
 		B93F1E442AF2F14C00026DCF /* GetAlumniFundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAlumniFundView.swift; sourceTree = "<group>"; };
 		B93F1E4A2AF2F1AC00026DCF /* AddDonationByAlumniView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDonationByAlumniView.swift; sourceTree = "<group>"; };
 		B93F1E4C2AF3042C00026DCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -72,6 +71,7 @@
 		B93F1E6B2AF42C0600026DCF /* AlumniView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlumniView.swift; sourceTree = "<group>"; };
 		B93F1E6D2AF433C900026DCF /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		B93F1E6F2AF4340000026DCF /* NotificationScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationScreenView.swift; sourceTree = "<group>"; };
+		B93F1E712AF478BD00026DCF /* OthersProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OthersProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,7 +142,6 @@
 				B93F1E322AF2AB6500026DCF /* GetPostView.swift */,
 				B93F1E3A2AF2F0C200026DCF /* AddPostView.swift */,
 				B93F1E3C2AF2F0FC00026DCF /* GetAlumniView.swift */,
-				B93F1E422AF2F13A00026DCF /* AddAlumniView.swift */,
 				B93F1E442AF2F14C00026DCF /* GetAlumniFundView.swift */,
 				B93F1E4A2AF2F1AC00026DCF /* AddDonationByAlumniView.swift */,
 				B93F1E4F2AF3091100026DCF /* LogInView.swift */,
@@ -159,6 +158,7 @@
 				B93F1E6B2AF42C0600026DCF /* AlumniView.swift */,
 				B93F1E6D2AF433C900026DCF /* NotificationView.swift */,
 				B93F1E6F2AF4340000026DCF /* NotificationScreenView.swift */,
+				B93F1E712AF478BD00026DCF /* OthersProfileView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -234,9 +234,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B93F1E3D2AF2F0FC00026DCF /* GetAlumniView.swift in Sources */,
-				B93F1E432AF2F13B00026DCF /* AddAlumniView.swift in Sources */,
 				B93F1E602AF3A8CE00026DCF /* LaunchScreen.swift in Sources */,
 				B93F1E352AF2BA2200026DCF /* StoringStructure.swift in Sources */,
+				B93F1E722AF478BD00026DCF /* OthersProfileView.swift in Sources */,
 				B93F1E332AF2AB6500026DCF /* GetPostView.swift in Sources */,
 				B93F1E312AF298A900026DCF /* ParsingStructure.swift in Sources */,
 				B93F1E4B2AF2F1AC00026DCF /* AddDonationByAlumniView.swift in Sources */,

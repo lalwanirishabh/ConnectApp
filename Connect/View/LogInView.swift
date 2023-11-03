@@ -126,6 +126,8 @@ struct LogInView: View {
                     
                     username = decodedData.username
                     groups = decodedData.groups
+                    print(username)
+                    print(groups)
                     navigateToTabsView.toggle()
                     
                 } catch {

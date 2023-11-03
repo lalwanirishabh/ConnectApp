@@ -8,10 +8,9 @@
 import SwiftUI
 
 struct ProfileView: View {
+    @State private var user: AlumniStructure = AlumniStructure(id: "", name: "", grad_year: "", contact_info: "", company: "")
     let name: String
-    let batch: String
     let groups: String
-    
     
     @State private var navigateToLogInView: Bool = false
     
@@ -40,7 +39,7 @@ struct ProfileView: View {
                             )
                             .foregroundColor(.black)
                         
-                        Text("Batch 2025")
+                        Text("Batch \(user.grad_year)")
                         .font(Font.custom("Leelawadee UI", size: 15))
                         .foregroundColor(.black)
                         
@@ -49,12 +48,25 @@ struct ProfileView: View {
                     
                 }
                 
-                Rectangle()
-                    .foregroundColor(.clear)
-                    .frame(width: 349, height: 448)
-                    .background(Color(red: 0.85, green: 0.85, blue: 0.85).opacity(0.25))
-                    .cornerRadius(15)
-                    .padding(.top, 10)
+                ZStack {
+                    Rectangle()
+                        .foregroundColor(.clear)
+                        .frame(width: 349, height: 448)
+                        .background(Color(red: 0.85, green: 0.85, blue: 0.85).opacity(0.25))
+                        .cornerRadius(15)
+                        .padding(.top, 10)
+                    
+                    VStack{
+                        Text(user.contact_info)
+                            .onTapGesture {
+                                if let url = URL(string: user.contact_info) {
+                                                    UIApplication.shared.open(url)
+                                                }
+                                            }
+                        
+                        Text("Currently employed by \(user.company)")
+                    }
+                }
                 
                 Button(action: {
                     
@@ -107,12 +119,79 @@ struct ProfileView: View {
         .fullScreenCover(isPresented: $navigateToLogInView, content: {
                     LogInView()
                 })
+        .onAppear(perform: {
+                APICallToFetchAllPosts()
+                })
         
         
         
     }
+    
+    func APICallToFetchAllPosts(){
+        var urlString: String = "http://192.168.1.8:3000/alumni/getAlumniByName/\(name)"
+        let url = URL(string: urlString)
+        
+        guard let requestUrl = url else { fatalError() }
+        
+        var request = URLRequest(url: requestUrl)
+        request.httpMethod = "GET"
+        
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+                
+                // Check for Error
+                if let error = error {
+                    print("Error took place \(error)")
+                    return
+                }
+            
+            if let data = data, let string = String(data: data, encoding: .utf8){
+                        print(string)
+            }
+            
+            if let safeData = data {
+                self.parseJSON(safeData)
+            }
+            
+            
+        }
+        task.resume()
+        
+    }
+    
+    func parseJSON(_ data: Data){
+                let decoder = JSONDecoder()
+                do {
+                    let decodedData = try decoder.decode(GetAlumniDetails.self, from: data)
+                    print("data decoded")
+                    user.grad_year = String(decodedData.alumni[0].grad_year)
+                    user.company = decodedData.alumni[0].company
+                    user.contact_info = decodedData.alumni[0].contact_info
+                    print(user.grad_year)
+                    
+                } catch {
+                    let erro = parseError(data)
+                }
+    }
+    
+    func parseError(_ data: Data) -> String{
+        var erro: String = ""
+        let decoder = JSONDecoder()
+        do {
+            let decodedData = try decoder.decode(err.self, from: data)
+            print("data decoded")
+            
+            
+            
+            return erro
+            
+        } catch {
+            print("cant parse authorization data")
+            return ""
+        }
+    }
+    
 }
 
 #Preview {
-    ProfileView(name: "Fahad Israr", batch: "2021", groups: "alumni")
+    ProfileView(name: "Fahad Israr", groups: "alumni")
 }

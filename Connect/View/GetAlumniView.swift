@@ -20,77 +20,79 @@ struct GetAlumniView: View {
     
     
     var body: some View {
-        VStack{
-            HStack{
-                Image(systemName: "arrowshape.turn.up.backward.circle.fill")
-                    .resizable()
-                    .frame(width: 30 , height: 30)
-                
-                ZStack(alignment: .trailing) {
-                    TextField("Search...", text: $searchedText)
-                        .onSubmit {
-                                alumnies.removeAll()
-                                APICallToFetchAllPosts()
-                        }
-                        .padding(12)
-                        .padding(.horizontal, 24)
-                        .background(Color(.systemGray6))
-                        .cornerRadius(20)
-                        .overlay(
-                            HStack {
-                                Image(systemName: "magnifyingglass")
-                                    .foregroundColor(.gray)
-                                    .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
-                                    .padding(.leading, 8)
-                            }
-                        )
-                        .disableAutocorrection(true)
-                        .textInputAutocapitalization(.never)
+        NavigationView {
+            VStack{
+                HStack{
                     
-                    Button(action: {
-                        
-                    }, label: {
-                        Image(systemName: "delete.left.fill")
-                            .foregroundColor(.black)
-                    })
-                    .padding(.trailing)
-                }
-                .padding(.trailing)
-                
-            }
-            
-            HStack{
-                ForEach(tags, id: \.self) { tag in
-                    ChipView(text: tag, isSelected: tag == selectedTag)
-                        .onTapGesture {
-                            selectedTag = tag
-                            if selectedTag! == "Name"{
-                                route = "ByName/"
-                            }else if selectedTag! == "Company"{
-                                route = "/"
-                            }else if selectedTag! == "Batch"{
-                                route = "ByYear/"
+                    ZStack(alignment: .trailing) {
+                        TextField("Search...", text: $searchedText)
+                            .onSubmit {
+                                    alumnies.removeAll()
+                                    APICallToFetchAllPosts()
                             }
-                        }
-                        .padding(.horizontal, 20)
+                            .padding(12)
+                            .padding(.horizontal, 24)
+                            .background(Color(.systemGray6))
+                            .cornerRadius(20)
+                            .overlay(
+                                HStack {
+                                    Image(systemName: "magnifyingglass")
+                                        .foregroundColor(.gray)
+                                        .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+                                        .padding(.leading, 8)
+                                }
+                            )
+                            .disableAutocorrection(true)
+                            .textInputAutocapitalization(.never)
+                        
+                        Button(action: {
+                            
+                        }, label: {
+                            Image(systemName: "delete.left.fill")
+                                .foregroundColor(.black)
+                        })
+                        .padding(.trailing)
+                    }
+                    .padding(.trailing)
+                    
                 }
-            }
-            
-            ScrollView{
-                VStack{
-                    ForEach(alumnies){ alumni in
-                        AlumniView(alumni: alumni)
+                
+                HStack{
+                    ForEach(tags, id: \.self) { tag in
+                        ChipView(text: tag, isSelected: tag == selectedTag)
+                            .onTapGesture {
+                                selectedTag = tag
+                                if selectedTag! == "Name"{
+                                    route = "ByName/"
+                                }else if selectedTag! == "Company"{
+                                    route = "/"
+                                }else if selectedTag! == "Batch"{
+                                    route = "ByYear/"
+                                }
+                            }
+                            .padding(.horizontal, 20)
                     }
                 }
+                
+                ScrollView{
+                    VStack{
+                        ForEach(alumnies){ alumni in
+                            NavigationLink(destination: OthersProfileView(name: alumni.name, batch: alumni.grad_year, contact_info: alumni.contact_info, company: alumni.company)){
+                                AlumniView(alumni: alumni)
+                            }
+                            
+                        }
+                    }
+                }
+                
+                Spacer()
+                
+                
             }
-            
-            Spacer()
-            
-            
+                .onAppear(perform: {
+                            APICallToFetchAllPosts()
+            })
         }
-            .onAppear(perform: {
-                        APICallToFetchAllPosts()
-                    })
     }
     
     func APICallToFetchAllPosts(){

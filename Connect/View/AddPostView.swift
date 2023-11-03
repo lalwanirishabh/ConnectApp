@@ -97,7 +97,7 @@ struct AddPostView: View {
     }
     
     func APICallToFetchAllPosts(){
-        let json: [String: Any] = ["name":"Fahad Israr", "title":"\(title)", "content":"\(description)", "groups":"alumni"]
+        let json: [String: Any] = ["name":"\(name)", "title":"\(title)", "content":"\(description)", "groups":"\(groups)"]
         let jsonData = try? JSONSerialization.data(withJSONObject: json)
         print(isValidJSON(jsonData!))
         let responseJSON = try? JSONSerialization.jsonObject(with: jsonData!, options: [])
