@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import CoreImage
+import CoreImage.CIFilterBuiltins
 
 struct AddDonationByAlumniView: View {
     @State private var code: String = "abcdef"
@@ -107,7 +109,7 @@ struct AddDonationByAlumniView: View {
                 print(responseJSON)
             }
         
-        let url = URL(string: "http://192.168.1.8:3000/alumniFund/addDonation")
+        let url = URL(string:  Constants.url + "/alumniFund/addDonation")
         guard let requestUrl = url else { fatalError() }
         
         var request = URLRequest(url: requestUrl)

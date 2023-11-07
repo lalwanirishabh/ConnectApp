@@ -96,7 +96,7 @@ struct GetAlumniView: View {
     }
     
     func APICallToFetchAllPosts(){
-        var urlString: String = "http://192.168.1.8:3000/alumni/getAlumni"
+        var urlString: String = Constants.url + "/alumni/getAlumni"
         route.append(searchedText)
         urlString += route
         print(urlString)

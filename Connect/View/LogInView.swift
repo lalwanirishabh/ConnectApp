@@ -9,8 +9,8 @@ import SwiftUI
 
 struct LogInView: View {
     @State private var navigateToTabsView: Bool = false
-    @State private var email: String = "211134@iiitt.ac.in"
-    @State private var password: String = "sunnykumar"
+    @State private var email: String = "211140@iiitt.ac.in"
+    @State private var password: String = "fahad"
     @State private var showAlert: Bool = false
     @State private var username: String = ""
     @State private var groups: String = ""
@@ -71,7 +71,7 @@ struct LogInView: View {
             }
             .background(.white)
             .fullScreenCover(isPresented: $navigateToTabsView, content: {
-                TabsView(name: username, groups: groups)
+                TabsView(name: $username, groups: $groups)
         })
             .alert(isPresented: $showAlert) {
                             Alert(
@@ -91,7 +91,7 @@ struct LogInView: View {
                 print(responseJSON)
             }
         
-        let url = URL(string: "http://192.168.1.8:3000/auth/login")
+        let url = URL(string:  Constants.url + "/auth/login")
         guard let requestUrl = url else { fatalError() }
         
         var request = URLRequest(url: requestUrl)

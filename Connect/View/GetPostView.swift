@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct GetPostView: View {
-    
+
     let name : String
     let groups: String
     
@@ -75,7 +75,7 @@ struct GetPostView: View {
     }
     
     func APICallToFetchAllPosts(){
-        var urlString = "http://192.168.1.8:3000/post/getPost"
+        var urlString = Constants.url + "/post/getPost"
         urlString += route
         let url = URL(string: urlString)
         guard let requestUrl = url else { fatalError() }
@@ -115,7 +115,7 @@ struct GetPostView: View {
                         let title: String = decodedData.posts[i].title
                         let content: String = decodedData.posts[i].content
                         
-                        let newPost = PostStructure(id: "001", name: name, title: title, content: content)
+                        let newPost = PostStructure(id: String(i) , name: name, title: title, content: content)
                         posts.append(newPost)
                     }
                     

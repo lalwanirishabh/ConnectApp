@@ -34,7 +34,7 @@ struct GetAlumniDetails: Codable{
 struct alumni: Codable{
     let alumni_id: Int
     let name: String
-    let grad_year: Int
+    let grad_year: String
     let contact_info: String
     let company: String
 }

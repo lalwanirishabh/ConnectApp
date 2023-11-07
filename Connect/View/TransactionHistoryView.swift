@@ -29,7 +29,7 @@ struct TransactionHistoryView: View {
     }
     
     func APICallToFetchAllPosts(){
-        var urlString = "http://192.168.1.8:3000/alumniFund/getDonations/\(name)"
+        var urlString = Constants.url + "/alumniFund/getDonations/\(name)"
         let url = URL(string: urlString)
         guard let requestUrl = url else { fatalError() }
         var request = URLRequest(url: requestUrl)

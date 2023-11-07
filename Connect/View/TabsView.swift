@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct TabsView: View {
-    let name: String
-    let groups: String
+    @Binding var name: String
+    @Binding var groups: String
     
     var body: some View {
         TabView{
@@ -32,9 +32,13 @@ struct TabsView: View {
             
             
         }
+        .onAppear(){
+            print(name)
+            print(groups)
+        }
     }
 }
 
 #Preview {
-    TabsView(name: "Fahad Israr", groups: "alumni")
+    TabsView(name: .constant("Fahad Israr"), groups: .constant("users"))
 }

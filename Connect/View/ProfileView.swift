@@ -9,8 +9,8 @@ import SwiftUI
 
 struct ProfileView: View {
     @State private var user: AlumniStructure = AlumniStructure(id: "", name: "", grad_year: "", contact_info: "", company: "")
-    let name: String
-    let groups: String
+    var name: String
+    var groups: String
     
     @State private var navigateToLogInView: Bool = false
     
@@ -78,7 +78,7 @@ struct ProfileView: View {
                                                 }
                 
                 
-                    NavigationLink(destination: PaymentDetailsView(name: name)){
+                    NavigationLink(destination: AddDonationByAlumniView(name: name)){
                         ZStack {
                             Rectangle()
                             .foregroundColor(.clear)
@@ -122,6 +122,8 @@ struct ProfileView: View {
                     LogInView()
                 })
         .onAppear(perform: {
+            print(name)
+            print(groups)
                 APICallToFetchAllPosts()
                 })
         
@@ -130,7 +132,8 @@ struct ProfileView: View {
     }
     
     func APICallToFetchAllPosts(){
-        var urlString: String = "http://192.168.1.8:3000/alumni/getAlumniByName/\(name)"
+        var urlString: String = Constants.url + "/alumni/getAlumniByName/\(name)"
+        print(urlString)
         let url = URL(string: urlString)
         
         guard let requestUrl = url else { fatalError() }
@@ -195,5 +198,5 @@ struct ProfileView: View {
 }
 
 #Preview {
-    ProfileView(name: "Fahad Israr", groups: "alumni")
+    ProfileView(name: "Fahad Israr", groups: "users")
 }

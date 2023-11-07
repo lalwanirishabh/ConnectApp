@@ -113,7 +113,7 @@ struct AddPostView: View {
                 print(responseJSON)
             }
         
-        let url = URL(string: "http://192.168.1.8:3000/post/addPost")
+        let url = URL(string: Constants.url + "/post/addPost")
         guard let requestUrl = url else { fatalError() }
         
         var request = URLRequest(url: requestUrl)
