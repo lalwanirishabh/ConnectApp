@@ -15,6 +15,7 @@ struct AddDonationByAlumniView: View {
     @State private var Amount: String = ""
     @State private var Date: String = ""
     @State private var Description: String = ""
+    @State private var showAlert: Bool = false
     let name: String
     
     let context = CIContext()
@@ -82,8 +83,19 @@ struct AddDonationByAlumniView: View {
                 }
             })
             
+            NavigationLink(destination: TransactionHistoryView(name: name)){
+                            Text("Transaction History")
+                        }
+            
             Spacer()
         }
+        .alert(isPresented: $showAlert) {
+                        Alert(
+                            title: Text("Success"),
+                            message: Text("Donation Details Added sucessfully"),
+                            dismissButton: .default(Text("OK"))
+                                )
+                }
     }
     
     func updateCode(code: String) -> UIImage {
@@ -152,6 +164,9 @@ struct AddDonationByAlumniView: View {
                     print("data decoded")
                     let mess = decodedData.message
                     print(mess)
+                    if mess == "Donation added successfully"{
+                        showAlert.toggle()
+                    }
                     return mess
                     
                 } catch {

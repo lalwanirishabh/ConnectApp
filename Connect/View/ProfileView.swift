@@ -59,14 +59,24 @@ struct ProfileView: View {
                         .padding(.top, 10)
                     
                     VStack{
-                        Text(user.contact_info)
-                            .onTapGesture {
-                                if let url = URL(string: user.contact_info) {
-                                                    UIApplication.shared.open(url)
-                                                }
-                                            }
-                        
-                        Text("Currently employed by \(user.company)")
+                        Text("LinkedIn Profile")
+                                .font(.headline)
+                            
+                            Text(user.contact_info)
+                                .font(.body)
+                                .foregroundColor(.blue)
+                                .underline()
+                                .onTapGesture {
+                                    if let url = URL(string: user.contact_info), UIApplication.shared.canOpenURL(url) {
+                                        UIApplication.shared.open(url)
+                                    }
+                                }
+                            
+                            Text("Currently employed by")
+                                .font(.headline)
+                            
+                            Text(user.company)
+                                .font(.body)
                     }
                 }
                 
@@ -198,5 +208,5 @@ struct ProfileView: View {
 }
 
 #Preview {
-    ProfileView(name: "Fahad Israr", groups: "users")
+    ProfileView(name: "Fahad Israr", groups: "alumni")
 }

@@ -56,15 +56,24 @@ struct OthersProfileView: View {
                         .padding(.top, 10)
                     
                     VStack{
-                        Text(contact_info)
-                            .onTapGesture {
-                                if let url = URL(string: contact_info) {
-                                                    UIApplication.shared.open(url)
-                                                }
-                                            }
-                        
-                        Text("Currently employed by \(company)")
-                    }
+                        Text("LinkedIn Profile")
+                                .font(.headline)
+                            
+                            Text(contact_info)
+                                .font(.body)
+                                .foregroundColor(.blue)
+                                .underline()
+                                .onTapGesture {
+                                    if let url = URL(string: contact_info), UIApplication.shared.canOpenURL(url) {
+                                        UIApplication.shared.open(url)
+                                    }
+                                }
+                            
+                            Text("Currently employed by")
+                                .font(.headline)
+                            
+                            Text(company)
+                                .font(.body)                    }
                 }
                 
             }
